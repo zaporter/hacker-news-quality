@@ -20,13 +20,6 @@ engagement with the post, tone (snarky, kind, curious, dismissive, helpful, thou
 use of evidence or personal experience, and topics (AI, programming languages). The same
 comments are rated by Jev (TypeSafe.ai) and by OpenAI's Decisions API, so the two models can be compared.
 
-Preliminary result (Jev, v4 questions): most measures move less than about 1% of their mean per year across
-2012–2026, and literacy shows no trend at all. The quality changes that do show up all point the way people
-complain, but they are small: ideological tone (+2.0%/yr), less evidence (−1.2%/yr), less kindness (−1.1%/yr),
-more snark (+1.0%/yr), and slightly less engagement with the post (−0.9%/yr). The largest change is topical
-rather than qualitative: comments mentioning AI rise from about 2% to about 29% (+17%/yr), while comments about
-programming languages fall from 15% to 10%.
-
 State:
 ```json5
 {
