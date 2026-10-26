@@ -45,21 +45,21 @@
 <main>
   <h1>Hacker News Comment Quality (2026)</h1>
   <p class="intro">
-    As an avid reader of HN, I will occasionally stuble upon some comments and wonder if comment quality really has changed over time (or if I'm just nostalgic).
+    As an avid reader of HN, I will occasionally stumble upon some comments and wonder if comment quality really has changed over time (or if I'm just nostalgic).
 
     <br/>
     As a fun weekend project, I decided that I wanted to answer this with decision models.
-    I selected 200 comments per month from 2012-01 to 2026-01 and using <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">jev</a> and the
-    <a href="https://developers.openai.com/api/docs/guides/decisions">"Open"AI Decisions API</a>
+    I selected 200 comments per month from 2012-01 to 2026-08. Using <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">jev</a> and the
+    <a href="https://developers.openai.com/api/docs/guides/decisions">"Open"AI Decisions API</a>,
     I evaluated comments from <a href="https://huggingface.co/datasets/open-index/hacker-news">open-index/hacker-news</a> on various metrics of "quality" (loosely derived from the HN guidelines)
-    to see if decision models can provide some insight into how HackerNews is changing with the times.
+    to see if decision models can provide some insight into how Hacker News is changing with the times.
 
     </p>
     <details>
     <summary>
     Comment Selection Methodology
     </summary>
-    <div>To keep things simple, I am simply selecting comments by selecting 200 random comments (uniformly) from each month. I have experimented with significantly
+    <div>To keep things simple, I select 200 random comments (uniformly) from each month. I have experimented with significantly
      more complex selection schemes like:
      <ul>
      <li>Only selecting comments from the top 3% of posts</li>
@@ -69,8 +69,9 @@
      However, the data was nearly identical and it made the sampling mechanism significantly harder to explain and justify.
      If you (yes you) are a statistics fanatic and know the "ideal/correct" sampling strategy, I am happy to try it.
      <br/>
-     Note: I also sample comments before knowing if they will pass validation, so some are rejected, leaving us with {jev ? jev.n.toLocaleString(): "loading..."}
- comments instead of a multiple of 200     </div>
+     Note: some sampled comments are dropped because the dataset is missing their parent or post, leaving us with {jev ? jev.n.toLocaleString() : "loading..."}
+     comments instead of a multiple of 200.
+     </div>
     </details>
          <details>
     <summary>
@@ -85,7 +86,7 @@
     AI Disclaimer
     </summary>
     <div>
-    All code for this project was written with Devin + Fusion. Though, I wrote the questions + prose.
+    All code for this project was written with Devin + Fusion. I wrote the questions and the prose.
     </div>
     </details>
 <p>
@@ -119,9 +120,9 @@
     <h2>
     Conclusions
     </h2>
-    I am surprised at how unsurprising this data is. Generally, HN has stayed consistent (in its good and bad traits, with small upticks in ideological speech and generic comments).
-    We will see how that changes as a result of AI, but this seems promising.
-
+    I am surprised at how unsurprising this data is. Generally, HN has stayed consistent in its good and bad traits, with small upticks in ideological speech and generic comments, but only by a few percent.
+    (AI has obviously grown as a topic but that isn't too surprising)
+    We will see how our speech changes as a result of everyone talking to agents constantly...
 <br/>
 Stay kind & thoughtful! Till next time.
     </section>
