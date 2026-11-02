@@ -17,3 +17,18 @@ export:
 
 web: export
     cd web && npm install && npm run dev
+
+# Build the Docker image (serves the static site on port 8000)
+build-docker:
+    docker build -t hnquality.zackporter.com web
+
+# Run the Docker container on port 8000
+run-docker:
+    docker rm -f hnquality.zackporter.com
+    docker run -d -p 8000:8000 --name hnquality.zackporter.com hnquality.zackporter.com
+
+# Push the Docker image to ECR
+push-ecr:
+    aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 330298988091.dkr.ecr.us-east-2.amazonaws.com
+    docker tag hnquality.zackporter.com:latest 330298988091.dkr.ecr.us-east-2.amazonaws.com/hnquality.zackporter.com:latest
+    docker push 330298988091.dkr.ecr.us-east-2.amazonaws.com/hnquality.zackporter.com:latest

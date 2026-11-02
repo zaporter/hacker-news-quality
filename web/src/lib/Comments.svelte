@@ -101,8 +101,9 @@
   }
   button.link.active { color: #000; text-decoration: underline; }
   button.link:disabled { opacity: 0.4; cursor: default; }
-  .thread { display: grid; gap: 10px; }
+  .thread { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; overflow-wrap: anywhere; }
   .comment { display: flex; gap: 6px; }
+  .comment > div { min-width: 0; }
   .comment.reply { margin-left: 40px; }
   .vote { color: #9a9a9a; font-size: 10px; line-height: 1.6; }
   .text { color: #000; line-height: 1.45; white-space: pre-line; max-height: 22em; overflow: auto; margin-top: 2px; }
